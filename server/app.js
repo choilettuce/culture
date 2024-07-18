@@ -1,4 +1,5 @@
 const express = require('express');
+const index = require("./index")
 const app = express();
 // const port = /*process.env.PORT ||*/ 8000;
 // const https = require("https").Server(app);
@@ -10,6 +11,12 @@ const app = express();
 const Server = app.listen(8000, () => {
   console.log(`서버시작 : localhost 8000`);
 })
+
+app.get('/api', function(request, response){
+  response.send(index);
+  console.log(index);
+});
+
 
 // cors
 const cors = require("cors");
