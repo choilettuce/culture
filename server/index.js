@@ -1,24 +1,16 @@
 require('dotenv').config();
 const axios = require('axios');
 
-const API_KEY = process.env.API_KEY;
+const API_KEY = 'EUkzUfkVUFB7oDqgGx4XVpjLkvW/nteSjzf36oVmOSTfZjdtmXEEskutvUQOONAOXSNC32eE50bvbX3Ng8DBOw==';
 const BASE_URL = 'http://apis.data.go.kr/B551011/KorService1';
 
 async function fetchTourismInfo() {
     try {
-        const response = await axios.get(`${BASE_URL}/locationBasedList`, {
+        const response = await axios.get(`${BASE_URL}/areaCode1?serviceKey=${API_KEY}`, {
             params: {
-                serviceKey: API_KEY,
+                numOfRows: '10',
                 MobileApp: 'AppTest',
                 MobileOS: 'ETC',
-                arrange: 'A',
-                contentTypeId: '12',
-                mapX: '126.981611',
-                mapY: '37.568477',
-                radius: '1000',
-                listYN: 'Y',
-                numOfRows: '10',
-                pageNo: '1',
                 _type: 'json'
             }
         });

@@ -1,5 +1,5 @@
 const express = require('express');
-const index = require("./index")
+const index = require("./index2")
 const app = express();
 // const port = /*process.env.PORT ||*/ 8000;
 // const https = require("https").Server(app);
